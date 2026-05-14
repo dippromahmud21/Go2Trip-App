@@ -1,0 +1,10 @@
+{
+  "name": "Go2Trip",
+  "short_name": "Go2Trip",
+  "description": "Collaborative trip planning and expense splitting.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#4313a0",
+  "icons": []
+}

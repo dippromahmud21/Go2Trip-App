@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 38 38% 97%;
+  --foreground: 260 42% 13%;
+  --muted: 258 24% 93%;
+  --muted-foreground: 260 13% 42%;
+  --primary: 258 78% 34%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 31 100% 50%;
+  --accent-foreground: 260 42% 13%;
+  --destructive: 0 74% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 258 19% 84%;
+  --brand-purple: 258 78% 34%;
+  --brand-purple-deep: 260 86% 22%;
+  --brand-orange: 31 100% 50%;
+  --brand-orange-soft: 35 100% 92%;
+  --surface: 0 0% 100%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, hsl(var(--brand-orange-soft)) 0, transparent 28rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.font-display {
+  font-family: Gloock, Georgia, serif;
+  font-weight: 400;
+}
+
+.text-title-xl {
+  font-family: Gloock, Georgia, serif;
+  font-size: clamp(3.75rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.92;
+}
+
+.text-title-lg {
+  font-family: Gloock, Georgia, serif;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.text-title-md {
+  font-family: Gloock, Georgia, serif;
+  font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-ui-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
