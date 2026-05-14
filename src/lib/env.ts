@@ -1,16 +1,17 @@
 import { z } from "zod";
 
-const optionalUrl = z
-  .string()
-  .trim()
-  .transform((value) => (value === "" ? undefined : value))
-  .pipe(z.string().url().optional());
+const emptyToUndefined = (value: unknown) => {
+  if (typeof value !== "string") {
+    return value;
+  }
 
-const optionalString = z
-  .string()
-  .trim()
-  .transform((value) => (value === "" ? undefined : value))
-  .optional();
+  const trimmed = value.trim();
+  return trimmed === "" ? undefined : trimmed;
+};
+
+const optionalUrl = z.preprocess(emptyToUndefined, z.string().url().optional());
+
+const optionalString = z.preprocess(emptyToUndefined, z.string().optional());
 
 const envSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
